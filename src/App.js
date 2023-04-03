@@ -14,7 +14,7 @@ function App() {
   };
   return (
     <div className={`${darkMode ? "dark" : ""}`}>
-      <div className="dark:bg-[#0c0500]">
+      <div className="dark:bg-[#0c0300]">
         <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <Hero />
         <Headinecards />
