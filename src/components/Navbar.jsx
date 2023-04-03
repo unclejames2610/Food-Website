@@ -5,15 +5,20 @@ import {
   AiOutlineMenu,
   AiOutlineSearch,
 } from "react-icons/ai";
-import { BsFillCartFill, BsFillSaveFill } from "react-icons/bs";
+import {
+  BsFillCartFill,
+  BsFillSaveFill,
+  BsMoonFill,
+  BsSunFill,
+} from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaUserFriends, FaWallet } from "react-icons/fa";
 import { MdFavorite, MdHelp } from "react-icons/md";
 
-const Navbar = () => {
+const Navbar = ({ toggleDarkMode, darkMode }) => {
   const [nav, setNav] = useState(false);
   return (
-    <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4">
+    <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4 dark:text-white">
       {/* Left side */}
       <div className="flex items-center">
         <div onClick={() => setNav(!nav)} className="cursor-pointer">
@@ -42,6 +47,17 @@ const Navbar = () => {
       <button className="bg-black text-white hidden md:flex items-center py-2 rounded-full">
         <BsFillCartFill size={20} className="mr-2" /> Cart
       </button>
+      <div onClick={toggleDarkMode}>
+        {darkMode ? (
+          <button className="bg-black text-white hidden md:flex items-center py-2 rounded-full">
+            <BsSunFill size={20} className="mr-2" />
+          </button>
+        ) : (
+          <button className="bg-white text-black hidden md:flex items-center py-2 rounded-full">
+            <BsMoonFill size={20} className="mr-2" />
+          </button>
+        )}
+      </div>
 
       {/* Mobile Menu */}
       {/* overlay */}
